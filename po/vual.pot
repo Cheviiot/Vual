@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026 Vual Authors
+# This file is distributed under the same license as the Vual package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vual 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-19 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Window titles
+msgid "Preferences"
+msgstr ""
+
+msgid "About Vual"
+msgstr ""
+
+# Appearance page
+msgid "Appearance"
+msgstr ""
+
+msgid "Theme"
+msgstr ""
+
+msgid "Color scheme"
+msgstr ""
+
+msgid "Light, dark, or system"
+msgstr ""
+
+msgid "System"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "Dark"
+msgstr ""
+
+msgid "Grid"
+msgstr ""
+
+msgid "Game display settings"
+msgstr ""
+
+msgid "Tile size"
+msgstr ""
+
+msgid "Cover size in library"
+msgstr ""
+
+msgid "Small (120px)"
+msgstr ""
+
+msgid "Medium (150px)"
+msgstr ""
+
+msgid "Large (180px)"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Default game order"
+msgstr ""
+
+msgid "By name"
+msgstr ""
+
+msgid "By status"
+msgstr ""
+
+# Wine theme
+msgid "Wine Theme"
+msgstr ""
+
+msgid "Color scheme for Cheat Engine and other Wine apps"
+msgstr ""
+
+msgid "Color scheme"
+msgstr ""
+
+msgid "Applied to all Proton prefixes"
+msgstr ""
+
+msgid "Reapply theme"
+msgstr ""
+
+msgid "Theme applied to %d prefixes"
+msgstr ""
+
+msgid "Error applying to %d prefixes"
+msgstr ""
+
+# Steam page
+msgid "Steam"
+msgstr ""
+
+msgid "Paths"
+msgstr ""
+
+msgid "Steam directory"
+msgstr ""
+
+msgid "Choose folder"
+msgstr ""
+
+msgid "Launch options"
+msgstr ""
+
+msgid "LaunchOptions template for protonhax"
+msgstr ""
+
+msgid "Template"
+msgstr ""
+
+msgid "Original launch command is substituted"
+msgstr ""
+
+msgid "Exclusions"
+msgstr ""
+
+msgid "Regex patterns to hide apps"
+msgstr ""
+
+msgid "Add pattern"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+# CE page
+msgid "Cheat Engine"
+msgstr ""
+
+msgid "Installation"
+msgstr ""
+
+msgid "Path to executable"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Download Cheat Engine"
+msgstr ""
+
+msgid "Latest GitHub release"
+msgstr ""
+
+msgid "Check for updates"
+msgstr ""
+
+msgid "Checking..."
+msgstr ""
+
+msgid "CE is up to date"
+msgstr ""
+
+msgid "Update available: %s"
+msgstr ""
+
+msgid "Failed to check"
+msgstr ""
+
+msgid "Downloading..."
+msgstr ""
+
+msgid "CE downloaded successfully"
+msgstr ""
+
+msgid "Download failed"
+msgstr ""
+
+msgid "Localization"
+msgstr ""
+
+msgid "Install Russian localization"
+msgstr ""
+
+msgid "Downloads from official Cheat Engine repository"
+msgstr ""
+
+msgid "Localization installed"
+msgstr ""
+
+msgid "Localization already installed"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "CE interface language"
+msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+# Main page
+msgid "Search..."
+msgstr ""
+
+msgid "Games not found"
+msgstr ""
+
+msgid "Check Steam path in settings"
+msgstr ""
+
+msgid "Refresh cover"
+msgstr ""
+
+msgid "Launch game"
+msgstr ""
+
+msgid "Launch Cheat Engine"
+msgstr ""
+
+msgid "Launching %s..."
+msgstr ""
+
+msgid "CE not found: %s"
+msgstr ""
+
+msgid "CE launched for %s"
+msgstr ""
+
+msgid "Failed to launch CE for %s"
+msgstr ""
+
+msgid "Close Steam to change settings"
+msgstr ""
+
+msgid "localconfig.vdf not found"
+msgstr ""
+
+msgid "LaunchOptions set for %s"
+msgstr ""
+
+msgid "LaunchOptions removed for %s"
+msgstr ""
+
+msgid "Error changing settings for %s"
+msgstr ""
+
+msgid "Enable for all games?"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Disable for all games?"
+msgstr ""
+
+msgid "LaunchOptions will be removed."
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Restarting Steam to apply..."
+msgstr ""
+
+msgid "Steam did not close"
+msgstr ""
+
+msgid "LaunchOptions set for %d games"
+msgstr ""
+
+msgid "LaunchOptions removed for %d games"
+msgstr ""
+
+# Window
+msgid "games"
+msgstr ""
+
+msgid "Enable All"
+msgstr ""
+
+msgid "Disable All"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "About"
+msgstr ""

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Vual
+Name[ru]=Vual
+GenericName=Cheat Engine Manager
+GenericName[ru]=Менеджер Cheat Engine
+Comment=Launch Cheat Engine for Steam games via Proton
+Comment[ru]=Запуск Cheat Engine для Steam-игр через Proton
+Exec=vual
+Icon=io.github.vual
+Terminal=false
+Type=Application
+Categories=Game;Utility;
+Keywords=cheat;engine;steam;proton;wine;games;trainer;
+Keywords[ru]=читы;движок;steam;proton;wine;игры;трейнер;
+StartupNotify=true
+StartupWMClass=vual

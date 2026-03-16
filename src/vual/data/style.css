@@ -1,0 +1,195 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Vual — Unified Size System
+   
+   Base unit: 4px
+   All sizes are multiples of 4px for consistency
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HEADER BAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Header buttons: 32x32 (8 units) */
+.header-btn {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+    margin: 0;
+    border-radius: 6px;
+}
+
+.header-btn:hover {
+    background: alpha(@accent_bg_color, 0.12);
+}
+
+.header-btn:active {
+    background: alpha(@accent_bg_color, 0.2);
+}
+
+/* Games counter */
+.games-counter {
+    font-size: 0.85em;
+    font-weight: 500;
+    opacity: 0.6;
+    margin-left: 8px;
+}
+
+/* Search entry */
+searchentry {
+    min-width: 220px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GRID LAYOUT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.vual-grid {
+    /* Padding handled in Python via set_margin_* */
+}
+
+flowboxchild {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+flowboxchild:focus,
+flowboxchild:hover,
+flowboxchild:selected {
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TILE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Tile container: 12px radius */
+.vual-tile {
+    border-radius: 12px;
+    background: @card_bg_color;
+    box-shadow: 0 1px 2px alpha(black, 0.08);
+}
+
+.vual-tile:hover {
+    box-shadow: 0 2px 8px alpha(black, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TILE INFO OVERLAY (bottom)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Info panel: gradient background */
+.vual-tile-info {
+    padding: 24px 8px 8px 8px;
+    background: linear-gradient(to bottom, 
+        transparent 0%,
+        alpha(black, 0.6) 50%,
+        alpha(black, 0.8) 100%);
+    border-radius: 0 0 12px 12px;
+}
+
+.vual-tile-info label {
+    color: white;
+}
+
+.vual-tile-info .heading {
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TILE BUTTONS (play, CE)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Tile buttons: 28x28 (7 units) */
+.tile-btn,
+.vual-tile-info button {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 0;
+    margin: 0;
+    color: white;
+    background: alpha(white, 0.12);
+    border-radius: 6px;
+    border: none;
+}
+
+.tile-btn:hover,
+.vual-tile-info button:hover {
+    background: alpha(white, 0.24);
+}
+
+.tile-btn:active,
+.vual-tile-info button:active {
+    background: alpha(white, 0.32);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TILE SWITCH
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.vual-tile-info switch {
+    background: alpha(white, 0.15);
+    border: none;
+}
+
+.vual-tile-info switch:checked {
+    background: @accent_bg_color;
+}
+
+.vual-tile-info switch slider {
+    background: white;
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RELOAD BUTTON (top-left corner)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Reload: 24x24 (6 units) */
+.vual-reload-btn {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 0;
+    margin: 0;
+    border-radius: 6px;
+    background: alpha(black, 0.5);
+    color: white;
+    opacity: 0;
+    border: none;
+}
+
+.vual-tile:hover .vual-reload-btn {
+    opacity: 1;
+}
+
+.vual-reload-btn:hover {
+    background: @accent_bg_color;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RUNNING BADGE (top-right corner)  
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Badge: 20px total (14px icon + 3px padding each side) */
+.vual-badge {
+    background: @success_bg_color;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SKELETON (loading placeholder)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.skeleton {
+    background: alpha(@card_shade_color, 0.2);
+    border-radius: 12px;
+}

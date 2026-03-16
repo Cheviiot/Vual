@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.vual</id>
+  <name>Vual</name>
+  <summary>Launch Cheat Engine for Steam games via Proton</summary>
+  <summary xml:lang="ru">Запуск Cheat Engine для Steam-игр через Proton</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <description>
+    <p>
+      Vual is a GTK4/libadwaita application that lets you browse your Steam
+      library, toggle protonhax launch options per game, and run Cheat Engine
+      inside the Proton context of a running game — all from a single window.
+    </p>
+    <p xml:lang="ru">
+      Vual — приложение на GTK4/libadwaita, которое показывает библиотеку Steam,
+      позволяет включать protonhax для каждой игры и запускать Cheat Engine
+      внутри Proton-контекста запущенной игры — из одного окна.
+    </p>
+    <ul>
+      <li>Game grid with covers from Steam CDN, search, and sorting</li>
+      <li>Per-game and batch protonhax launch option management</li>
+      <li>One-click game launch with automatic Cheat Engine attach</li>
+      <li>Download and extract Cheat Engine via Proton Wine</li>
+      <li>Dark and light Wine theme for all Proton prefixes</li>
+      <li>Application and Cheat Engine language switching (EN/RU)</li>
+      <li xml:lang="ru">Сетка игр с обложками из Steam CDN, поиск и сортировка</li>
+      <li xml:lang="ru">Управление launch options protonhax по играм и массово</li>
+      <li xml:lang="ru">Запуск игры с автоматическим подключением Cheat Engine</li>
+      <li xml:lang="ru">Скачивание и распаковка Cheat Engine через Wine из Proton</li>
+      <li xml:lang="ru">Тёмная и светлая тема Wine для всех Proton-префиксов</li>
+      <li xml:lang="ru">Переключение языка приложения и Cheat Engine (EN/RU)</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.vual.desktop</launchable>
+
+  <url type="homepage">https://github.com/Cheviiot/vual</url>
+  <url type="bugtracker">https://github.com/Cheviiot/vual/issues</url>
+  <url type="vcs-browser">https://github.com/Cheviiot/vual</url>
+
+  <provides>
+    <binary>vual</binary>
+  </provides>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </recommends>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#62a0ea</color>
+    <color type="primary" scheme_preference="dark">#1a5fb4</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Steam game library</caption>
+      <caption xml:lang="ru">Библиотека игр Steam</caption>
+      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/main.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.1.0" date="2026-03-17">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="ru">Первый выпуск.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+
+  <developer id="io.github.cheviiot">
+    <name>Cheviiot</name>
+  </developer>
+</component>

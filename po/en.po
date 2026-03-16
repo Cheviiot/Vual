@@ -1,0 +1,457 @@
+# English translation for Vual
+# Copyright (C) 2026 Vual Authors
+# This file is distributed under the same license as the Vual package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vual 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-19 00:00+0000\n"
+"PO-Revision-Date: 2026-03-19 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Window titles
+msgid "Preferences"
+msgstr "Preferences"
+
+msgid "About Vual"
+msgstr "About Vual"
+
+# Appearance page
+msgid "Appearance"
+msgstr "Appearance"
+
+msgid "Theme"
+msgstr "Theme"
+
+msgid "Color scheme"
+msgstr "Color scheme"
+
+msgid "Light, dark, or system"
+msgstr "Light, dark, or system"
+
+msgid "System"
+msgstr "System"
+
+msgid "Light"
+msgstr "Light"
+
+msgid "Dark"
+msgstr "Dark"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Application interface language"
+msgstr "Application interface language"
+
+msgid "Restart app to apply language"
+msgstr "Restart app to apply language"
+
+msgid "Grid"
+msgstr "Grid"
+
+msgid "Game display settings"
+msgstr "Game display settings"
+
+msgid "Tile size"
+msgstr "Tile size"
+
+msgid "Cover size in library"
+msgstr "Cover size in library"
+
+msgid "Small (120px)"
+msgstr "Small (120px)"
+
+msgid "Medium (150px)"
+msgstr "Medium (150px)"
+
+msgid "Large (180px)"
+msgstr "Large (180px)"
+
+msgid "Sort"
+msgstr "Sort"
+
+msgid "Default game order"
+msgstr "Default game order"
+
+msgid "By name"
+msgstr "By name"
+
+msgid "By status"
+msgstr "By status"
+
+# Wine theme
+msgid "Wine Theme"
+msgstr "Wine Theme"
+
+msgid "Color scheme for Cheat Engine and other Wine apps"
+msgstr "Color scheme for Cheat Engine and other Wine apps"
+
+msgid "Applied to all Proton prefixes"
+msgstr "Applied to all Proton prefixes"
+
+msgid "Reapply theme"
+msgstr "Reapply theme"
+
+msgid "Theme applied to %d prefixes"
+msgstr "Theme applied to %d prefixes"
+
+msgid "Error applying to %d prefixes"
+msgstr "Error applying to %d prefixes"
+
+# Steam page
+msgid "Steam"
+msgstr "Steam"
+
+msgid "Paths"
+msgstr "Paths"
+
+msgid "Steam directory"
+msgstr "Steam directory"
+
+msgid "Choose folder"
+msgstr "Choose folder"
+
+msgid "Launch options"
+msgstr "Launch options"
+
+msgid "LaunchOptions template for protonhax"
+msgstr "LaunchOptions template for protonhax"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Original launch command is substituted"
+msgstr "Original launch command is substituted"
+
+msgid "Exclusions"
+msgstr "Exclusions"
+
+msgid "Regex patterns to hide apps"
+msgstr "Regex patterns to hide apps"
+
+msgid "Add pattern"
+msgstr "Add pattern"
+
+msgid "Remove"
+msgstr "Remove"
+
+# CE page
+msgid "Cheat Engine"
+msgstr "Cheat Engine"
+
+msgid "Installation"
+msgstr "Installation"
+
+msgid "Path to executable"
+msgstr "Path to executable"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Download Cheat Engine"
+msgstr "Download Cheat Engine"
+
+msgid "Latest GitHub release"
+msgstr "Latest GitHub release"
+
+msgid "Check for updates"
+msgstr "Check for updates"
+
+msgid "Checking..."
+msgstr "Checking..."
+
+msgid "CE is up to date"
+msgstr "CE is up to date"
+
+msgid "Update available: %s"
+msgstr "Update available: %s"
+
+msgid "Failed to check"
+msgstr "Failed to check"
+
+msgid "Downloading..."
+msgstr "Downloading..."
+
+msgid "CE downloaded successfully"
+msgstr "CE downloaded successfully"
+
+msgid "Download failed"
+msgstr "Download failed"
+
+msgid "Localization"
+msgstr "Localization"
+
+msgid "Install Russian localization"
+msgstr "Install Russian localization"
+
+msgid "Downloads from official Cheat Engine repository"
+msgstr "Downloads from official Cheat Engine repository"
+
+msgid "Localization installed"
+msgstr "Localization installed"
+
+msgid "Localization already installed"
+msgstr "Localization already installed"
+
+msgid "CE interface language"
+msgstr "CE interface language"
+
+msgid "Russian"
+msgstr "Russian"
+
+# Main page
+msgid "Search..."
+msgstr "Search..."
+
+msgid "Games not found"
+msgstr "Games not found"
+
+msgid "Check Steam path in settings"
+msgstr "Check Steam path in settings"
+
+msgid "Refresh cover"
+msgstr "Refresh cover"
+
+msgid "Launch game"
+msgstr "Launch game"
+
+msgid "Launch Cheat Engine"
+msgstr "Launch Cheat Engine"
+
+msgid "Launching %s..."
+msgstr "Launching %s..."
+
+msgid "CE not found: %s"
+msgstr "CE not found: %s"
+
+msgid "CE launched for %s"
+msgstr "CE launched for %s"
+
+msgid "Failed to launch CE for %s"
+msgstr "Failed to launch CE for %s"
+
+msgid "Close Steam to change settings"
+msgstr "Close Steam to change settings"
+
+msgid "localconfig.vdf not found"
+msgstr "localconfig.vdf not found"
+
+msgid "LaunchOptions set for %s"
+msgstr "LaunchOptions set for %s"
+
+msgid "LaunchOptions removed for %s"
+msgstr "LaunchOptions removed for %s"
+
+msgid "Error changing settings for %s"
+msgstr "Error changing settings for %s"
+
+msgid "Enable for all games?"
+msgstr "Enable for all games?"
+
+msgid "Enable"
+msgstr "Enable"
+
+msgid "Disable for all games?"
+msgstr "Disable for all games?"
+
+msgid "LaunchOptions will be removed."
+msgstr "LaunchOptions will be removed."
+
+msgid "Disable"
+msgstr "Disable"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Restarting Steam to apply..."
+msgstr "Restarting Steam to apply..."
+
+msgid "Steam did not close"
+msgstr "Steam did not close"
+
+msgid "LaunchOptions set for %d games"
+msgstr "LaunchOptions set for %d games"
+
+msgid "LaunchOptions removed for %d games"
+msgstr "LaunchOptions removed for %d games"
+
+# Window
+msgid "games"
+msgstr "games"
+
+msgid "Enable All"
+msgstr "Enable All"
+
+msgid "Disable All"
+msgstr "Disable All"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "About"
+msgstr "About"
+
+# CE page additional
+msgid "All files"
+msgstr "All files"
+
+msgid "Cheat Engine setup and download"
+msgstr "Cheat Engine setup and download"
+
+msgid "Cheat Engine installed"
+msgstr "Cheat Engine installed"
+
+msgid "Cheat Engine interface language"
+msgstr "Cheat Engine interface language"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Downloads latest version from GitHub"
+msgstr "Downloads latest version from GitHub"
+
+msgid "Cheat Engine launched"
+msgstr "Cheat Engine launched"
+
+msgid "Cheat Engine not found"
+msgstr "Cheat Engine not found"
+
+msgid "Cheat Engine required"
+msgstr "Cheat Engine required"
+
+msgid "Check"
+msgstr "Check"
+
+msgid "Choose file"
+msgstr "Choose file"
+
+msgid "Click Check"
+msgstr "Click Check"
+
+msgid "%d games"
+msgstr "%d games"
+
+msgid "Downloading: %s"
+msgstr "Downloading: %s"
+
+msgid "Error: %s"
+msgstr "Error: %s"
+
+msgid "Executable"
+msgstr "Executable"
+
+msgid "Executable files (*.exe)"
+msgstr "Executable files (*.exe)"
+
+msgid "✓ External: %s"
+msgstr "✓ External: %s"
+
+msgid "Extracted — specify path manually"
+msgstr "Extracted — specify path manually"
+
+msgid "Extracting..."
+msgstr "Extracting..."
+
+msgid "Extraction failed"
+msgstr "Extraction failed"
+
+msgid "Failed to get info"
+msgstr "Failed to get info"
+
+msgid "Failed to install localization"
+msgstr "Failed to install localization"
+
+msgid "Install"
+msgstr "Install"
+
+msgid "✓ Installed"
+msgstr "✓ Installed"
+
+msgid "Install or update"
+msgstr "Install or update"
+
+msgid "Interface"
+msgstr "Interface"
+
+msgid "Latest version"
+msgstr "Latest version"
+
+msgid "Launch"
+msgstr "Launch"
+
+msgid "Launch CE via Wine (without game binding)"
+msgstr "Launch CE via Wine (without game binding)"
+
+msgid "Required for attaching to Proton games"
+msgstr "Required for attaching to Proton games"
+
+msgid "Requires CE restart"
+msgstr "Requires CE restart"
+
+msgid "LaunchOptions %s for %s"
+msgstr "LaunchOptions %s for %s"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "✗ Not found"
+msgstr "✗ Not found"
+
+msgid "✗ Not installed"
+msgstr "✗ Not installed"
+
+msgid "Not installed"
+msgstr "Not installed"
+
+msgid "protonhax installed"
+msgstr "protonhax installed"
+
+msgid "Quit"
+msgstr "Quit"
+
+msgid "Refresh"
+msgstr "Refresh"
+
+msgid "Reinstall"
+msgstr "Reinstall"
+
+msgid "removed"
+msgstr "removed"
+
+msgid "Russian localization"
+msgstr "Russian localization"
+
+msgid "Select CE executable"
+msgstr "Select CE executable"
+
+msgid "Select Steam directory"
+msgstr "Select Steam directory"
+
+msgid "set"
+msgstr "set"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Steam did not exit"
+msgstr "Steam did not exit"
+
+msgid "Test launch"
+msgstr "Test launch"
+
+msgid "⟳ Update available"
+msgstr "⟳ Update available"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Wine not found — install Proton"
+msgstr "Wine not found — install Proton"

@@ -1,0 +1,39 @@
+[project]
+name = "vual"
+version = "0.1.0"
+description = "Launch Cheat Engine for Steam games via Proton"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+requires-python = ">=3.11"
+authors = [{ name = "Cheviiot" }]
+keywords = ["cheatengine", "steam", "proton", "wine", "games", "gtk4", "libadwaita"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: X11 Applications :: GTK",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+]
+dependencies = ["requests>=2.31.0"]
+
+[project.urls]
+Homepage = "https://github.com/Cheviiot/vual"
+Repository = "https://github.com/Cheviiot/vual"
+Issues = "https://github.com/Cheviiot/vual/issues"
+
+[project.gui-scripts]
+vual = "vual.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vual"]
+
+[tool.uv]
+managed = true
