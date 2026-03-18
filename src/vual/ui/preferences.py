@@ -29,6 +29,7 @@ class PreferencesWindow(Adw.PreferencesWindow):
             **kwargs,
         )
         self._config = config
+        self._parent = kwargs.get("transient_for")
         self._exclusion_rows: list[Adw.EntryRow] = []
         self._release_info: dict | None = None
         self._building = True  # Prevent saves during initial build
@@ -94,6 +95,15 @@ class PreferencesWindow(Adw.PreferencesWindow):
         self._lang_app_row.set_selected(lang_app_idx)
         self._lang_app_row.connect("notify::selected", self._on_app_lang_changed)
         theme_group.add(self._lang_app_row)
+
+        # Transparent window toggle
+        self._transparent_row = Adw.SwitchRow(
+            title=_("Transparent window"),
+            subtitle=_("Semi-transparent background"),
+        )
+        self._transparent_row.set_active(self._config.transparent_window)
+        self._transparent_row.connect("notify::active", self._on_transparent_changed)
+        theme_group.add(self._transparent_row)
 
         # Grid group
         grid_group = Adw.PreferencesGroup(
@@ -178,6 +188,12 @@ class PreferencesWindow(Adw.PreferencesWindow):
         self._save()
         # Show restart hint
         self._show_toast(_("Restart app to apply language"))
+
+    def _on_transparent_changed(self, row: Adw.SwitchRow, _pspec) -> None:
+        self._config.transparent_window = row.get_active()
+        self._save()
+        if self._parent:
+            self._parent.apply_transparency()
 
     def _apply_theme(self) -> None:
         style = Adw.StyleManager.get_default()

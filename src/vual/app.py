@@ -39,6 +39,10 @@ class VualApp(Adw.Application):
             win.set_default_size(self.config.window_width, self.config.window_height)
         win.present()
 
+        # Show guide on first run
+        if not self.config.guide_shown:
+            win.show_guide()
+
     # ── Startup: register actions ────────────────────────────────
 
     def do_startup(self) -> None:
@@ -66,6 +70,10 @@ class VualApp(Adw.Application):
         prefs_action = Gio.SimpleAction.new("preferences", None)
         prefs_action.connect("activate", self._on_preferences)
         self.add_action(prefs_action)
+
+        guide_action = Gio.SimpleAction.new("guide", None)
+        guide_action.connect("activate", self._on_guide)
+        self.add_action(guide_action)
 
         quit_action = Gio.SimpleAction.new("quit", None)
         quit_action.connect("activate", lambda *_: self.quit())
@@ -97,3 +105,9 @@ class VualApp(Adw.Application):
 
         win = PreferencesWindow(config=self.config, transient_for=self.props.active_window)
         win.present()
+
+    # ── Guide ────────────────────────────────────────────────────
+
+    def _on_guide(self, _action: Gio.SimpleAction, _param: None) -> None:
+        if self.props.active_window:
+            self.props.active_window.show_guide()

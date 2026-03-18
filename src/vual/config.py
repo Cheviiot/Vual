@@ -37,6 +37,8 @@ class Config:
         ce_language: CE language ("system", "ru_RU").
         wine_theme: Wine color theme ("system", "dark", "light").
         app_language: Application UI language ("system", "en", "ru").
+        transparent_window: Enable semi-transparent window background.
+        guide_shown: Whether the startup guide has been shown.
     """
 
     ce_executable: str = "~/.local/share/vual/cheatengine/cheatengine-x86_64.exe"
@@ -52,6 +54,8 @@ class Config:
     ce_language: str = "system"
     wine_theme: str = "system"
     app_language: str = "system"
+    transparent_window: bool = False
+    guide_shown: bool = False
 
     # ════════════════════════════════════════════════════════════════
     # Load / Save
@@ -81,6 +85,8 @@ class Config:
                     ce_language=data.get("ce_language", cls.ce_language),
                     wine_theme=data.get("wine_theme", cls.wine_theme),
                     app_language=data.get("app_language", cls.app_language),
+                    transparent_window=data.get("transparent_window", cls.transparent_window),
+                    guide_shown=data.get("guide_shown", cls.guide_shown),
                 )
             except (json.JSONDecodeError, OSError):
                 pass
@@ -107,6 +113,8 @@ class Config:
             "ce_language": self.ce_language,
             "wine_theme": self.wine_theme,
             "app_language": self.app_language,
+            "transparent_window": self.transparent_window,
+            "guide_shown": self.guide_shown,
         }
         CONFIG_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
         return CONFIG_PATH

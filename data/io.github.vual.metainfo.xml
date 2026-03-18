@@ -1,36 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>io.github.vual</id>
+
   <name>Vual</name>
-  <summary>Launch Cheat Engine for Steam games via Proton</summary>
+  <summary>Cheat Engine launcher for Steam + Proton</summary>
   <summary xml:lang="ru">Запуск Cheat Engine для Steam-игр через Proton</summary>
+
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
+  <developer id="io.github.cheviiot">
+    <name>Cheviiot</name>
+  </developer>
+
   <description>
     <p>
-      Vual is a GTK4/libadwaita application that lets you browse your Steam
-      library, toggle protonhax launch options per game, and run Cheat Engine
-      inside the Proton context of a running game — all from a single window.
+      Vual lets you run Cheat Engine inside any Steam game that uses Proton.
+      It reads your Steam library, manages protonhax launch options, downloads
+      and extracts Cheat Engine automatically, and launches CE in the correct
+      Wine prefix — all from one compact window.
     </p>
     <p xml:lang="ru">
-      Vual — приложение на GTK4/libadwaita, которое показывает библиотеку Steam,
-      позволяет включать protonhax для каждой игры и запускать Cheat Engine
-      внутри Proton-контекста запущенной игры — из одного окна.
+      Vual позволяет запускать Cheat Engine в любой Steam-игре, работающей
+      через Proton. Приложение читает библиотеку Steam, управляет launch
+      options для protonhax, автоматически скачивает и распаковывает Cheat
+      Engine и запускает CE в нужном Wine-префиксе — всё из одного окна.
     </p>
+
+    <p>Key features:</p>
+    <p xml:lang="ru">Основные возможности:</p>
     <ul>
-      <li>Game grid with covers from Steam CDN, search, and sorting</li>
-      <li>Per-game and batch protonhax launch option management</li>
-      <li>One-click game launch with automatic Cheat Engine attach</li>
-      <li>Download and extract Cheat Engine via Proton Wine</li>
-      <li>Dark and light Wine theme for all Proton prefixes</li>
-      <li>Application and Cheat Engine language switching (EN/RU)</li>
-      <li xml:lang="ru">Сетка игр с обложками из Steam CDN, поиск и сортировка</li>
-      <li xml:lang="ru">Управление launch options protonhax по играм и массово</li>
-      <li xml:lang="ru">Запуск игры с автоматическим подключением Cheat Engine</li>
-      <li xml:lang="ru">Скачивание и распаковка Cheat Engine через Wine из Proton</li>
-      <li xml:lang="ru">Тёмная и светлая тема Wine для всех Proton-префиксов</li>
-      <li xml:lang="ru">Переключение языка приложения и Cheat Engine (EN/RU)</li>
+      <li>Game grid with Steam CDN covers, real-time search, and sorting</li>
+      <li>One-click launch — game starts via Steam, CE attaches to its Proton prefix</li>
+      <li>Bind .CT cheat tables to games so they load together with CE</li>
+      <li>Per-game and bulk protonhax toggle with automatic launch option editing</li>
+      <li>Download CE from cheatengine.org and extract it through Proton Wine</li>
+      <li>Apply dark or light Wine theme to all Proton prefixes at once</li>
+      <li>Install the official Russian CE translation from the CE repository</li>
+      <li>Built-in quick-start guide on first launch</li>
+      <li xml:lang="ru">Сетка игр с обложками из Steam CDN, поиск в реальном времени, сортировка</li>
+      <li xml:lang="ru">Запуск одним кликом — игра стартует через Steam, CE подключается к её Proton-префиксу</li>
+      <li xml:lang="ru">Привязка .CT-таблиц к играм — открываются вместе с CE</li>
+      <li xml:lang="ru">Переключатель protonhax для каждой игры и массово, автоматическая правка launch options</li>
+      <li xml:lang="ru">Скачивание CE с cheatengine.org и распаковка через Wine из Proton</li>
+      <li xml:lang="ru">Тёмная или светлая тема Wine для всех Proton-префиксов разом</li>
+      <li xml:lang="ru">Установка официальной русской локализации CE из репозитория CE</li>
+      <li xml:lang="ru">Встроенный гайд при первом запуске</li>
     </ul>
   </description>
 
@@ -40,9 +55,18 @@
   <url type="bugtracker">https://github.com/Cheviiot/vual/issues</url>
   <url type="vcs-browser">https://github.com/Cheviiot/vual</url>
 
-  <provides>
-    <binary>vual</binary>
-  </provides>
+  <branding>
+    <color type="primary" scheme_preference="light">#62a0ea</color>
+    <color type="primary" scheme_preference="dark">#1a5fb4</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Steam game library with covers</caption>
+      <caption xml:lang="ru">Библиотека Steam с обложками</caption>
+      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/main.png</image>
+    </screenshot>
+  </screenshots>
 
   <requires>
     <display_length compare="ge">360</display_length>
@@ -53,31 +77,44 @@
     <control>keyboard</control>
   </recommends>
 
-  <branding>
-    <color type="primary" scheme_preference="light">#62a0ea</color>
-    <color type="primary" scheme_preference="dark">#1a5fb4</color>
-  </branding>
-
-  <screenshots>
-    <screenshot type="default">
-      <caption>Steam game library</caption>
-      <caption xml:lang="ru">Библиотека игр Steam</caption>
-      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/main.png</image>
-    </screenshot>
-  </screenshots>
+  <provides>
+    <binary>vual</binary>
+  </provides>
 
   <releases>
+    <release version="0.2.0" date="2026-03-19">
+      <description>
+        <p>CE table binding, Wine theme manager, built-in guide, window transparency, Adwyra-inspired theme, Russian CE locale installer.</p>
+        <p xml:lang="ru">Привязка CE-таблиц, менеджер тем Wine, встроенный гайд, прозрачность окна, тема Adwyra, установка русской локализации CE.</p>
+      </description>
+    </release>
     <release version="0.1.0" date="2026-03-17">
       <description>
-        <p>First release.</p>
-        <p xml:lang="ru">Первый выпуск.</p>
+        <p>First release — game grid, protonhax management, CE download and launch.</p>
+        <p xml:lang="ru">Первый выпуск — сетка игр, управление protonhax, скачивание и запуск CE.</p>
       </description>
     </release>
   </releases>
 
   <content_rating type="oars-1.1" />
 
-  <developer id="io.github.cheviiot">
-    <name>Cheviiot</name>
-  </developer>
+  <keywords>
+    <keyword>cheatengine</keyword>
+    <keyword>cheat engine</keyword>
+    <keyword>steam</keyword>
+    <keyword>proton</keyword>
+    <keyword>wine</keyword>
+    <keyword>games</keyword>
+    <keyword xml:lang="ru">чит</keyword>
+    <keyword xml:lang="ru">игры</keyword>
+  </keywords>
+
+  <categories>
+    <category>Game</category>
+    <category>Utility</category>
+  </categories>
+
+  <custom>
+    <value key="GnomeSoftware::key-colors">[(98, 160, 234)]</value>
+  </custom>
 </component>

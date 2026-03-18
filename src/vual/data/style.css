@@ -1,51 +1,68 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   Vual — Unified Size System
-   
-   Base unit: 4px
-   All sizes are multiples of 4px for consistency
+   Vual — Adwyra-inspired theme
+   Minimalist, clean design with soft shadows and accent highlights
    ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Transparent Window ────────────────────────────────────────────────── */
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   HEADER BAR
-   ═══════════════════════════════════════════════════════════════════════════ */
+window.transparent-window {
+    background-color: alpha(@window_bg_color, 0.82);
+}
+/* ── Header Bar ───────────────────────────────────────────────────────────── */
 
-/* Header buttons: 32x32 (8 units) */
 .header-btn {
     min-width: 32px;
     min-height: 32px;
     padding: 0;
     margin: 0;
-    border-radius: 6px;
+    border-radius: 10px;
+    transition: background-color 150ms ease-out, box-shadow 150ms ease-out;
 }
 
 .header-btn:hover {
-    background: alpha(@accent_bg_color, 0.12);
+    background-color: alpha(@accent_color, 0.08);
+    box-shadow: 0 2px 6px alpha(black, 0.06);
 }
 
 .header-btn:active {
-    background: alpha(@accent_bg_color, 0.2);
+    background-color: alpha(@accent_color, 0.16);
+    box-shadow: none;
 }
 
-/* Games counter */
 .games-counter {
-    font-size: 0.85em;
-    font-weight: 500;
-    opacity: 0.6;
+    font-size: 0.84em;
+    font-weight: 450;
+    opacity: 0.65;
     margin-left: 8px;
 }
 
-/* Search entry */
+/* ── Search Entry ─────────────────────────────────────────────────────────── */
+
 searchentry {
     min-width: 220px;
+    border-radius: 14px;
+    padding: 1px 10px;
+    background-color: alpha(@view_bg_color, 0.3);
+    border: 1px solid alpha(@borders, 0.1);
+    box-shadow: 0 1px 3px alpha(black, 0.04);
+    transition: box-shadow 200ms ease-out, background-color 200ms ease-out, 
+                border-color 200ms ease-out;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   GRID LAYOUT
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.vual-grid {
-    /* Padding handled in Python via set_margin_* */
+searchentry:focus {
+    background-color: @view_bg_color;
+    border-color: alpha(@accent_color, 0.35);
+    box-shadow: 0 0 0 3px alpha(@accent_color, 0.15);
 }
+
+searchentry image {
+    opacity: 0.5;
+}
+
+searchentry:focus image {
+    opacity: 0.75;
+}
+
+/* ── Grid Layout ──────────────────────────────────────────────────────────── */
 
 flowboxchild {
     padding: 0;
@@ -64,49 +81,47 @@ flowboxchild:selected {
     box-shadow: none;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   TILE
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Tile ─────────────────────────────────────────────────────────────────── */
 
-/* Tile container: 12px radius */
 .vual-tile {
-    border-radius: 12px;
+    border-radius: 14px;
     background: @card_bg_color;
-    box-shadow: 0 1px 2px alpha(black, 0.08);
+    box-shadow: 0 1px 3px alpha(black, 0.10), 0 0 0 1px alpha(black, 0.04);
+    transition: box-shadow 150ms ease-out;
 }
 
 .vual-tile:hover {
-    box-shadow: 0 2px 8px alpha(black, 0.15);
+    box-shadow: 0 4px 12px alpha(black, 0.14), 0 0 0 1px alpha(black, 0.05);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   TILE INFO OVERLAY (bottom)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Tile Info Overlay ────────────────────────────────────────────────────── */
 
-/* Info panel: gradient background */
 .vual-tile-info {
-    padding: 24px 8px 8px 8px;
+    padding: 20px 8px 8px 8px;
     background: linear-gradient(to bottom, 
         transparent 0%,
-        alpha(black, 0.6) 50%,
-        alpha(black, 0.8) 100%);
-    border-radius: 0 0 12px 12px;
+        alpha(black, 0.55) 50%,
+        alpha(black, 0.75) 100%);
+    border-radius: 0 0 14px 14px;
 }
 
 .vual-tile-info label {
     color: white;
+    transition: opacity 150ms ease-out;
 }
 
 .vual-tile-info .heading {
-    font-weight: 600;
-    font-size: 0.85em;
+    font-weight: 500;
+    font-size: 0.84em;
+    opacity: 0.9;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   TILE BUTTONS (play, CE)
-   ═══════════════════════════════════════════════════════════════════════════ */
+.vual-tile:hover .vual-tile-info .heading {
+    opacity: 1;
+}
 
-/* Tile buttons: 28x28 (7 units) */
+/* ── Tile Buttons ─────────────────────────────────────────────────────────── */
+
 .tile-btn,
 .vual-tile-info button {
     min-width: 28px;
@@ -114,28 +129,47 @@ flowboxchild:selected {
     padding: 0;
     margin: 0;
     color: white;
-    background: alpha(white, 0.12);
-    border-radius: 6px;
+    background: alpha(white, 0.08);
+    border-radius: 8px;
     border: none;
+    transition: background-color 150ms ease-out, box-shadow 150ms ease-out;
 }
 
 .tile-btn:hover,
 .vual-tile-info button:hover {
-    background: alpha(white, 0.24);
+    background: alpha(white, 0.18);
+    box-shadow: 0 2px 6px alpha(black, 0.12);
 }
 
 .tile-btn:active,
 .vual-tile-info button:active {
-    background: alpha(white, 0.32);
+    background: alpha(white, 0.26);
+    box-shadow: none;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   TILE SWITCH
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* Popover menus — compact */
+popover contents {
+    padding: 4px;
+}
+
+popover modelbutton {
+    min-height: 22px;
+    padding: 2px 8px;
+    font-size: 0.88em;
+    border-radius: 6px;
+    transition: background-color 100ms ease-out;
+}
+
+popover modelbutton:hover {
+    background-color: alpha(@accent_color, 0.1);
+}
+
+/* ── Tile Switch ──────────────────────────────────────────────────────────── */
 
 .vual-tile-info switch {
-    background: alpha(white, 0.15);
+    background: alpha(white, 0.12);
     border: none;
+    transition: background-color 150ms ease-out, box-shadow 150ms ease-out;
 }
 
 .vual-tile-info switch:checked {
@@ -146,50 +180,206 @@ flowboxchild:selected {
     background: white;
     min-width: 16px;
     min-height: 16px;
-    border-radius: 8px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px alpha(black, 0.18);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   RELOAD BUTTON (top-left corner)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Reload Button ────────────────────────────────────────────────────────── */
 
-/* Reload: 24x24 (6 units) */
 .vual-reload-btn {
     min-width: 24px;
     min-height: 24px;
     padding: 0;
     margin: 0;
-    border-radius: 6px;
-    background: alpha(black, 0.5);
+    border-radius: 50%;
+    background: alpha(black, 0.35);
     color: white;
     opacity: 0;
     border: none;
+    transition: opacity 200ms ease-out, background-color 200ms ease-out;
 }
 
 .vual-tile:hover .vual-reload-btn {
-    opacity: 1;
+    opacity: 0.7;
 }
 
 .vual-reload-btn:hover {
-    background: @accent_bg_color;
+    opacity: 1;
+    background: alpha(@accent_color, 0.75);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   RUNNING BADGE (top-right corner)  
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Running Badge ────────────────────────────────────────────────────────── */
 
-/* Badge: 20px total (14px icon + 3px padding each side) */
 .vual-badge {
-    background: @success_bg_color;
+    min-width: 12px;
+    min-height: 12px;
+    background: radial-gradient(circle at 35% 35%, alpha(white, 0.95) 0%, alpha(@accent_color, 0.95) 32%, @accent_color 68%, alpha(@accent_color, 0.88) 100%);
     border-radius: 50%;
-    padding: 3px;
+    border: 1px solid alpha(white, 0.45);
+    box-shadow: 0 0 0 1px alpha(@accent_color, 0.16), 0 0 8px alpha(@accent_color, 0.55), 0 0 16px alpha(@accent_color, 0.32), 0 2px 6px alpha(black, 0.22);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   SKELETON (loading placeholder)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Skeleton ─────────────────────────────────────────────────────────────── */
 
 .skeleton {
-    background: alpha(@card_shade_color, 0.2);
+    background: alpha(@card_shade_color, 0.15);
+    border-radius: 14px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GUIDE PAGE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.guide-page {
+    margin: 0;
+}
+
+.guide-hero {
+    padding: 24px 24px 28px 24px;
+    border-radius: 24px;
+    background: linear-gradient(
+        180deg,
+        alpha(@accent_color, 0.12) 0%,
+        alpha(@accent_color, 0.04) 100%
+    );
+    border: 1px solid alpha(@accent_color, 0.08);
+}
+
+.guide-eyebrow {
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.guide-title {
+    font-size: 2.1em;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.guide-subtitle {
+    font-size: 1.02em;
+    opacity: 0.78;
+    line-height: 1.35;
+}
+
+.guide-card {
+    padding: 20px;
+    border-radius: 20px;
+    background: alpha(@view_bg_color, 0.55);
+    border: 1px solid alpha(@borders, 0.12);
+    box-shadow: 0 1px 3px alpha(black, 0.04);
+}
+
+.guide-card-title {
+    font-size: 1.08em;
+    font-weight: 700;
+}
+
+.guide-card-subtitle {
+    opacity: 0.7;
+    line-height: 1.35;
+}
+
+.guide-list-row {
+    margin-top: 2px;
+}
+
+.guide-bullet {
+    min-width: 12px;
+    opacity: 0.7;
+}
+
+.guide-list-text {
+    line-height: 1.35;
+}
+
+.guide-step {
+    padding: 10px 0;
+}
+
+.guide-step-badge {
+    border-radius: 999px;
+    background: alpha(@accent_color, 0.14);
+    color: @accent_color;
+    font-weight: 700;
+}
+
+.guide-step-title {
+    font-weight: 650;
+}
+
+.guide-step-description {
+    opacity: 0.72;
+    line-height: 1.35;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PREFERENCES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+preferencesgroup > box > .header {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+preferencesgroup > box > box.header > box.title > label.title {
+    font-weight: 600;
+    font-size: 0.84em;
+    letter-spacing: 0.04em;
+    opacity: 0.55;
+    text-transform: uppercase;
+}
+
+preferencesgroup > box > .header > label.description {
+    font-size: 0.8em;
+}
+
+/* Boxed lists */
+.boxed-list {
     border-radius: 12px;
+    border: 1px solid alpha(@borders, 0.12);
+    background-color: alpha(@view_bg_color, 0.45);
+    box-shadow: 0 1px 3px alpha(black, 0.04);
+}
+
+row {
+    border-radius: 10px;
+    margin: 0 4px;
+    padding: 0;
+    min-height: 40px;
+    transition: background-color 120ms ease-out;
+}
+
+row:hover {
+    background-color: alpha(@accent_color, 0.06);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dimmed {
+    opacity: 0.45;
+    transition: opacity 150ms ease-out;
+}
+
+.dimmed:hover {
+    opacity: 0.9;
+}
+
+.success { color: @success_color; }
+.warning { color: @warning_color; }
+
+separator {
+    background-color: alpha(@borders, 0.18);
+    margin: 4px 0;
+    min-height: 1px;
+}
+
+tooltip {
+    border-radius: 8px;
+    padding: 4px 8px;
 }

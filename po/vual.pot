@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: vual 0.1.0\n"
+"Project-Id-Version: vual 0.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-19 00:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -99,6 +99,31 @@ msgid "Theme applied to %d prefixes"
 msgstr ""
 
 msgid "Error applying to %d prefixes"
+msgstr ""
+
+# Visual Effects
+msgid "Visual Effects"
+msgstr ""
+
+msgid "Shadows, transparency, and accent colors"
+msgstr ""
+
+msgid "Shadows"
+msgstr ""
+
+msgid "Enhanced tile shadows and hover lift"
+msgstr ""
+
+msgid "Transparency"
+msgstr ""
+
+msgid "Glassmorphism effect on overlays"
+msgstr ""
+
+msgid "Accent glow"
+msgstr ""
+
+msgid "Glow effect on active elements"
 msgstr ""
 
 # Steam page
@@ -222,6 +247,18 @@ msgid "Launch game"
 msgstr ""
 
 msgid "Launch Cheat Engine"
+msgstr ""
+
+msgid "Assign table…"
+msgstr ""
+
+msgid "Remove table"
+msgstr ""
+
+msgid "Select Cheat Engine table"
+msgstr ""
+
+msgid "CE tables (*.CT)"
 msgstr ""
 
 msgid "Launching %s..."

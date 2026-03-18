@@ -23,7 +23,6 @@ _LOCALE_DIRS = [
 
 # Global translator
 _translator: gettext.GNUTranslations | gettext.NullTranslations | None = None
-_current_lang: str = "system"
 
 
 def _find_locale_dir() -> Path | None:
@@ -47,8 +46,7 @@ def init(lang: str = "system") -> None:
         lang: Language code ("system", "en", "ru"). 
               "system" uses system locale.
     """
-    global _translator, _current_lang
-    _current_lang = lang
+    global _translator
     
     # Get system locale
     try:
@@ -78,23 +76,8 @@ def init(lang: str = "system") -> None:
         _translator = gettext.NullTranslations()
 
 
-def set_language(lang: str) -> None:
-    """Change application language.
-    
-    Args:
-        lang: Language code ("system", "en", "ru").
-    """
-    init(lang)
-
-
-def get_current_language() -> str:
-    """Get current language setting."""
-    return _current_lang
-
-
 def _(message: str) -> str:
     """Translate a message string."""
-    global _translator
     if _translator is None:
         init()
     return _translator.gettext(message) if _translator else message
@@ -102,7 +85,6 @@ def _(message: str) -> str:
 
 def ngettext(singular: str, plural: str, n: int) -> str:
     """Translate a plural message."""
-    global _translator
     if _translator is None:
         init()
     return _translator.ngettext(singular, plural, n) if _translator else (singular if n == 1 else plural)

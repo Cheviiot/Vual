@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vual 0.1.0\n"
+"Project-Id-Version: vual 0.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-19 00:00+0000\n"
 "PO-Revision-Date: 2026-03-19 00:00+0000\n"
@@ -53,6 +53,12 @@ msgstr "Язык интерфейса приложения"
 
 msgid "Restart app to apply language"
 msgstr "Перезапустите приложение для смены языка"
+
+msgid "Transparent window"
+msgstr "Прозрачность окна"
+
+msgid "Semi-transparent background"
+msgstr "Полупрозрачный фон"
 
 msgid "Grid"
 msgstr "Сетка"
@@ -105,6 +111,31 @@ msgstr "Тема применена к %d префиксам"
 
 msgid "Error applying to %d prefixes"
 msgstr "Ошибка применения к %d префиксам"
+
+# Visual Effects
+msgid "Visual Effects"
+msgstr "Визуальные эффекты"
+
+msgid "Shadows, transparency, and accent colors"
+msgstr "Тени, прозрачность и акцентные цвета"
+
+msgid "Shadows"
+msgstr "Тени"
+
+msgid "Enhanced tile shadows and hover lift"
+msgstr "Усиленные тени и подъём при наведении"
+
+msgid "Transparency"
+msgstr "Прозрачность"
+
+msgid "Glassmorphism effect on overlays"
+msgstr "Эффект стекла на накладках"
+
+msgid "Accent glow"
+msgstr "Акцентное свечение"
+
+msgid "Glow effect on active elements"
+msgstr "Свечение активных элементов"
 
 # Steam page
 msgid "Steam"
@@ -226,6 +257,18 @@ msgstr "Запустить игру"
 msgid "Launch Cheat Engine"
 msgstr "Запустить Cheat Engine"
 
+msgid "Assign table…"
+msgstr "Назначить таблицу…"
+
+msgid "Remove table"
+msgstr "Убрать таблицу"
+
+msgid "Select Cheat Engine table"
+msgstr "Выберите таблицу Cheat Engine"
+
+msgid "CE tables (*.CT)"
+msgstr "Таблицы CE (*.CT)"
+
 msgid "Launching %s..."
 msgstr "Запуск %s…"
 
@@ -298,6 +341,91 @@ msgstr "Настройки"
 
 msgid "About"
 msgstr "О программе"
+
+# Guide
+msgid "Guide"
+msgstr "Гайд"
+
+msgid "Close guide"
+msgstr "Закрыть гайд"
+
+msgid "Welcome to Vual"
+msgstr "Добро пожаловать в Vual"
+
+msgid "Getting Started"
+msgstr "Быстрый старт"
+
+msgid "Set up Vual in a couple of minutes"
+msgstr "Настройте Vual за пару минут"
+
+msgid "Vual links Steam, Proton and Cheat Engine so you can launch the game first and open CE in the right prefix without manual setup every time."
+msgstr "Vual связывает Steam, Proton и Cheat Engine, чтобы вы могли сначала запускать игру, а затем открывать CE в нужном префиксе без ручной настройки каждый раз."
+
+msgid "Before you start"
+msgstr "Перед началом"
+
+msgid "Make sure the base tools are ready before enabling games."
+msgstr "Убедитесь, что базовые инструменты готовы, прежде чем включать игры."
+
+msgid "Install or download Cheat Engine in Settings"
+msgstr "Установите или скачайте Cheat Engine в настройках"
+
+msgid "Check that the Steam path points to the correct library"
+msgstr "Проверьте, что путь Steam указывает на правильную библиотеку"
+
+msgid "Close Steam before changing launch options for many games"
+msgstr "Закройте Steam перед изменением параметров запуска для множества игр"
+
+msgid "How Vual works"
+msgstr "Как работает Vual"
+
+msgid "The usual workflow is short and always the same."
+msgstr "Обычный сценарий короткий и всегда одинаковый."
+
+msgid "Pick a game"
+msgstr "Выберите игру"
+
+msgid "Find the game in the library and enable the switch on its tile."
+msgstr "Найдите игру в библиотеке и включите переключатель на её плитке."
+
+msgid "Start it from Steam"
+msgstr "Запустите её из Steam"
+
+msgid "Steam launches the game with protonhax and prepares the correct environment."
+msgstr "Steam запустит игру через protonhax и подготовит правильное окружение."
+
+msgid "Open Cheat Engine"
+msgstr "Откройте Cheat Engine"
+
+msgid "Use the tile menu to launch CE directly for that running game."
+msgstr "Используйте меню плитки, чтобы запустить CE прямо для этой запущенной игры."
+
+msgid "Optional: attach a table"
+msgstr "Необязательно: привяжите таблицу"
+
+msgid "Bind a .CT file once and Vual will pass it to Cheat Engine automatically."
+msgstr "Привяжите .CT файл один раз, и Vual будет автоматически передавать его в Cheat Engine."
+
+msgid "Good to know"
+msgstr "Полезно знать"
+
+msgid "A few things save time once the basics are configured."
+msgstr "Несколько вещей заметно экономят время после базовой настройки."
+
+msgid "Use search in the header to filter large libraries quickly"
+msgstr "Используйте поиск в заголовке, чтобы быстро фильтровать большие библиотеки"
+
+msgid "The menu button on each tile contains CE actions and table binding"
+msgstr "Кнопка меню на каждой плитке содержит действия CE и привязку таблиц"
+
+msgid "Window transparency can be toggled in Appearance settings"
+msgstr "Прозрачность окна можно включить или выключить в настройках внешнего вида"
+
+msgid "Open Settings"
+msgstr "Открыть настройки"
+
+msgid "Open Library"
+msgstr "Открыть библиотеку"
 
 # CE page additional
 msgid "Actions"

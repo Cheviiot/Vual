@@ -7,7 +7,7 @@ import sys
 def _ensure_gi_available():
     """Add system site-packages to path if gi is not importable (e.g., in venv)."""
     try:
-        import gi  # noqa: F401
+        __import__("gi")
         return
     except ImportError:
         pass

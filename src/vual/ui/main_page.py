@@ -19,11 +19,11 @@ gi.require_version("Gdk", "4.0")
 gi.require_version("GdkPixbuf", "2.0")
 gi.require_version("Pango", "1.0")
 
-from gi.repository import Adw, Gdk, GdkPixbuf, GLib, Gtk, Pango
+from gi.repository import Adw, Gdk, GdkPixbuf, Gio, GLib, Gtk, Pango
 
 import requests
 
-from vual import protonhax, steam
+from vual import protonhax, steam, tables
 from vual.config import TILE_SIZES, Config
 from vual.i18n import _
 
@@ -217,14 +217,39 @@ class GameTile(Gtk.Overlay):
         btn_play.connect("clicked", self._on_play_clicked)
         row.append(btn_play)
 
-        # CE button
-        btn_ce = Gtk.Button()
-        btn_ce.set_icon_name("utilities-terminal-symbolic")
-        btn_ce.add_css_class("flat")
-        btn_ce.add_css_class("tile-btn")
-        btn_ce.set_tooltip_text(_("Launch Cheat Engine"))
-        btn_ce.connect("clicked", self._on_ce_clicked)
-        row.append(btn_ce)
+        # CE button with table menu
+        self._btn_ce = Gtk.MenuButton()
+        self._btn_ce.set_icon_name("open-menu-symbolic")
+        self._btn_ce.add_css_class("flat")
+        self._btn_ce.add_css_class("tile-btn")
+        self._update_ce_tooltip()
+
+        ce_menu = Gio.Menu()
+        ce_menu.append(_("Launch Cheat Engine"), "tile.launch-ce")
+        ce_menu.append(_("Assign table…"), "tile.assign-table")
+        ce_menu.append(_("Remove table"), "tile.remove-table")
+
+        pop = Gtk.PopoverMenu.new_from_model(ce_menu)
+        self._btn_ce.set_popover(pop)
+
+        # Actions
+        group = Gio.SimpleActionGroup()
+
+        act_launch = Gio.SimpleAction.new("launch-ce", None)
+        act_launch.connect("activate", lambda *_: self._on_ce_clicked(None))
+        group.add_action(act_launch)
+
+        act_assign = Gio.SimpleAction.new("assign-table", None)
+        act_assign.connect("activate", lambda *_: self._on_assign_table())
+        group.add_action(act_assign)
+
+        self._act_remove = Gio.SimpleAction.new("remove-table", None)
+        self._act_remove.connect("activate", lambda *_: self._on_remove_table())
+        self._act_remove.set_enabled(tables.get_table(self._app_id) is not None)
+        group.add_action(self._act_remove)
+
+        self.insert_action_group("tile", group)
+        row.append(self._btn_ce)
 
         # Spacer
         spacer = Gtk.Box()
@@ -257,8 +282,7 @@ class GameTile(Gtk.Overlay):
 
     def _build_running_badge(self) -> None:
         """Create running badge in top-right corner."""
-        self._badge = Gtk.Image.new_from_icon_name("media-playback-start-symbolic")
-        self._badge.set_pixel_size(14)
+        self._badge = Gtk.Box()
         self._badge.add_css_class("vual-badge")
         self._badge.set_valign(Gtk.Align.START)
         self._badge.set_halign(Gtk.Align.END)
@@ -322,12 +346,35 @@ class GameTile(Gtk.Overlay):
         if hasattr(self, "_on_launch"):
             self._on_launch(self._app_id, self._name)
 
-    def _on_ce_clicked(self, _btn: Gtk.Button) -> None:
+    def _on_ce_clicked(self, _btn: Gtk.Button | None) -> None:
         """Emit CE signal."""
         if hasattr(self, "_on_launch_ce"):
             self._on_launch_ce(self._app_id, self._name)
 
-    def _on_switch_toggled(self, switch: Gtk.Switch, state: bool) -> bool:
+    def _on_assign_table(self) -> None:
+        """Open file chooser to assign a .CT table."""
+        if hasattr(self, "_on_pick_table"):
+            self._on_pick_table(self._app_id)
+
+    def _on_remove_table(self) -> None:
+        """Remove the bound table."""
+        tables.unbind(self._app_id)
+        self._act_remove.set_enabled(False)
+        self._update_ce_tooltip()
+
+    def _update_ce_tooltip(self) -> None:
+        name = tables.get_table_name(self._app_id)
+        if name:
+            self._btn_ce.set_tooltip_text(f"CE: {name}")
+        else:
+            self._btn_ce.set_tooltip_text(_("Launch Cheat Engine"))
+
+    def mark_table_bound(self) -> None:
+        """Refresh table indicator after binding."""
+        self._act_remove.set_enabled(tables.get_table(self._app_id) is not None)
+        self._update_ce_tooltip()
+
+    def _on_switch_toggled(self, _switch: Gtk.Switch, state: bool) -> bool:
         """Handle activation toggle."""
         self._is_active = state
         if hasattr(self, "_on_toggle"):
@@ -352,6 +399,9 @@ class GameTile(Gtk.Overlay):
 
     def connect_reload(self, callback) -> None:
         self._on_reload = callback
+
+    def connect_pick_table(self, callback) -> None:
+        self._on_pick_table = callback
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -473,11 +523,6 @@ class MainPage(Adw.Bin):
         for app_id, tile in self._tiles.items():
             tile.set_running(app_id in running_ids)
 
-    @property
-    def games_count(self) -> int:
-        """Number of loaded games."""
-        return len(self._tiles)
-
     # ─── Filter & Sort ────────────────────────────────────────────────────────
 
     def _filter_func(self, child: Gtk.FlowBoxChild) -> bool:
@@ -567,6 +612,7 @@ class MainPage(Adw.Bin):
             tile.connect_launch_ce(self._on_launch_ce)
             tile.connect_toggle(self._on_toggle)
             tile.connect_reload(self._on_reload_cover)
+            tile.connect_pick_table(self._on_pick_table)
 
             self._tiles[app_id] = tile
             self._grid.append(tile)
@@ -666,15 +712,49 @@ class MainPage(Adw.Bin):
             self._win.show_toast(_("CE not found: %s") % self._cfg.ce_executable)
             return
 
-        args = None
+        args: list[str] = []
         if self._cfg.ce_language != "system":
-            args = ["--LANG", self._cfg.ce_language]
+            args.extend(["--LANG", self._cfg.ce_language])
 
-        proc = protonhax.run_in_proton(app_id, str(self._cfg.ce_executable_path), args)
+        ct = tables.get_table(app_id)
+        if ct:
+            args.append(str(ct))
+
+        proc = protonhax.run_in_proton(app_id, str(self._cfg.ce_executable_path), args or None)
         if proc:
             self._win.show_toast(_("CE launched for %s") % name)
         else:
             self._win.show_toast(_("Failed to launch CE for %s") % name)
+
+    def _on_pick_table(self, app_id: str) -> None:
+        """Open file chooser to select a .CT table for *app_id*."""
+        dialog = Gtk.FileDialog()
+        dialog.set_title(_("Select Cheat Engine table"))
+
+        f = Gtk.FileFilter()
+        f.set_name(_("CE tables (*.CT)"))
+        f.add_pattern("*.CT")
+        f.add_pattern("*.ct")
+        filters = Gio.ListStore.new(Gtk.FileFilter)
+        filters.append(f)
+        dialog.set_filters(filters)
+
+        dialog.open(self._win, None, self._on_table_chosen, app_id)
+
+    def _on_table_chosen(self, dialog: Gtk.FileDialog, result: Gio.AsyncResult, app_id: str) -> None:
+        try:
+            gfile = dialog.open_finish(result)
+        except GLib.Error:
+            return
+        if not gfile:
+            return
+        path = gfile.get_path()
+        if not path:
+            return
+        tables.bind(app_id, path)
+        tile = self._tiles.get(app_id)
+        if tile:
+            tile.mark_table_bound()
 
     def _on_toggle(self, app_id: str, active: bool) -> None:
         """Handle activation toggle."""
@@ -811,6 +891,3 @@ class MainPage(Adw.Bin):
         if restart:
             steam.start_steam()
 
-    def schedule_auto_launch(self, app_id: str) -> None:
-        """Schedule auto CE launch for a game."""
-        self._auto_ce = app_id

@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vual 0.1.0\n"
+"Project-Id-Version: vual 0.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-19 00:00+0000\n"
 "PO-Revision-Date: 2026-03-19 00:00+0000\n"
@@ -105,6 +105,31 @@ msgstr "Theme applied to %d prefixes"
 
 msgid "Error applying to %d prefixes"
 msgstr "Error applying to %d prefixes"
+
+# Visual Effects
+msgid "Visual Effects"
+msgstr "Visual Effects"
+
+msgid "Shadows, transparency, and accent colors"
+msgstr "Shadows, transparency, and accent colors"
+
+msgid "Shadows"
+msgstr "Shadows"
+
+msgid "Enhanced tile shadows and hover lift"
+msgstr "Enhanced tile shadows and hover lift"
+
+msgid "Transparency"
+msgstr "Transparency"
+
+msgid "Glassmorphism effect on overlays"
+msgstr "Glassmorphism effect on overlays"
+
+msgid "Accent glow"
+msgstr "Accent glow"
+
+msgid "Glow effect on active elements"
+msgstr "Glow effect on active elements"
 
 # Steam page
 msgid "Steam"
@@ -226,6 +251,18 @@ msgstr "Launch game"
 msgid "Launch Cheat Engine"
 msgstr "Launch Cheat Engine"
 
+msgid "Assign table…"
+msgstr "Assign table…"
+
+msgid "Remove table"
+msgstr "Remove table"
+
+msgid "Select Cheat Engine table"
+msgstr "Select Cheat Engine table"
+
+msgid "CE tables (*.CT)"
+msgstr "CE tables (*.CT)"
+
 msgid "Launching %s..."
 msgstr "Launching %s..."
 
@@ -298,6 +335,91 @@ msgstr "Settings"
 
 msgid "About"
 msgstr "About"
+
+# Guide
+msgid "Guide"
+msgstr "Guide"
+
+msgid "Close guide"
+msgstr "Close guide"
+
+msgid "Welcome to Vual"
+msgstr "Welcome to Vual"
+
+msgid "Getting Started"
+msgstr "Getting Started"
+
+msgid "Set up Vual in a couple of minutes"
+msgstr "Set up Vual in a couple of minutes"
+
+msgid "Vual links Steam, Proton and Cheat Engine so you can launch the game first and open CE in the right prefix without manual setup every time."
+msgstr "Vual links Steam, Proton and Cheat Engine so you can launch the game first and open CE in the right prefix without manual setup every time."
+
+msgid "Before you start"
+msgstr "Before you start"
+
+msgid "Make sure the base tools are ready before enabling games."
+msgstr "Make sure the base tools are ready before enabling games."
+
+msgid "Install or download Cheat Engine in Settings"
+msgstr "Install or download Cheat Engine in Settings"
+
+msgid "Check that the Steam path points to the correct library"
+msgstr "Check that the Steam path points to the correct library"
+
+msgid "Close Steam before changing launch options for many games"
+msgstr "Close Steam before changing launch options for many games"
+
+msgid "How Vual works"
+msgstr "How Vual works"
+
+msgid "The usual workflow is short and always the same."
+msgstr "The usual workflow is short and always the same."
+
+msgid "Pick a game"
+msgstr "Pick a game"
+
+msgid "Find the game in the library and enable the switch on its tile."
+msgstr "Find the game in the library and enable the switch on its tile."
+
+msgid "Start it from Steam"
+msgstr "Start it from Steam"
+
+msgid "Steam launches the game with protonhax and prepares the correct environment."
+msgstr "Steam launches the game with protonhax and prepares the correct environment."
+
+msgid "Open Cheat Engine"
+msgstr "Open Cheat Engine"
+
+msgid "Use the tile menu to launch CE directly for that running game."
+msgstr "Use the tile menu to launch CE directly for that running game."
+
+msgid "Optional: attach a table"
+msgstr "Optional: attach a table"
+
+msgid "Bind a .CT file once and Vual will pass it to Cheat Engine automatically."
+msgstr "Bind a .CT file once and Vual will pass it to Cheat Engine automatically."
+
+msgid "Good to know"
+msgstr "Good to know"
+
+msgid "A few things save time once the basics are configured."
+msgstr "A few things save time once the basics are configured."
+
+msgid "Use search in the header to filter large libraries quickly"
+msgstr "Use search in the header to filter large libraries quickly"
+
+msgid "The menu button on each tile contains CE actions and table binding"
+msgstr "The menu button on each tile contains CE actions and table binding"
+
+msgid "Window transparency can be toggled in Appearance settings"
+msgstr "Window transparency can be toggled in Appearance settings"
+
+msgid "Open Settings"
+msgstr "Open Settings"
+
+msgid "Open Library"
+msgstr "Open Library"
 
 # CE page additional
 msgid "All files"
