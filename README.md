@@ -43,7 +43,7 @@ cd vual
 ./vual
 ```
 
-### Stapler (ALT Linux)
+### [Stapler](https://stplr.dev/)
 
 ```bash
 stplr repo add lumenara https://github.com/Cheviiot/Lumenara
