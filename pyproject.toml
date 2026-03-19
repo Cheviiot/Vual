@@ -1,6 +1,6 @@
 [project]
 name = "vual"
-version = "0.3.0"
+version = "0.3.1"
 description = "Launch Cheat Engine for Steam games via Proton"
 readme = "README.md"
 license = "GPL-3.0-or-later"

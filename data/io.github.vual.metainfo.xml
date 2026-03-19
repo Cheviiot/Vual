@@ -97,6 +97,12 @@
   </provides>
 
   <releases>
+    <release version="0.3.1" date="2026-03-19">
+      <description>
+        <p>Open tables folder from tile menu, shortened menu labels, language selector fully localized, screenshot height fix.</p>
+        <p xml:lang="ru">Открытие папки таблиц из меню, сокращённые пункты меню, полная локализация выбора языка, исправление высоты скриншотов.</p>
+      </description>
+    </release>
     <release version="0.3.0" date="2026-03-19">
       <description>
         <p>Code split into modules, new icon, screenshots, version check before download, full localization sync.</p>

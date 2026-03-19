@@ -358,6 +358,7 @@ class MainPage(Adw.Bin):
         """Open file chooser to select a .CT table for *app_id*."""
         dialog = Gtk.FileDialog()
         dialog.set_title(_("Select Cheat Engine table"))
+        dialog.set_initial_folder(Gio.File.new_for_path(str(tables.TABLES_DIR)))
 
         f = Gtk.FileFilter()
         f.set_name(_("CE tables (*.CT)"))

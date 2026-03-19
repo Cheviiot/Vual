@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vual 0.3.0\n"
+"Project-Id-Version: vual 0.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-19 00:00+0000\n"
 "PO-Revision-Date: 2026-03-19 00:00+0000\n"
@@ -248,14 +248,17 @@ msgstr "Refresh cover"
 msgid "Launch game"
 msgstr "Launch game"
 
-msgid "Launch Cheat Engine"
-msgstr "Launch Cheat Engine"
+msgid "Launch CE"
+msgstr "Launch CE"
 
 msgid "Assign table…"
-msgstr "Assign table…"
+msgstr "Assign…"
 
 msgid "Remove table"
 msgstr "Remove table"
+
+msgid "Tables folder"
+msgstr "Tables folder"
 
 msgid "Select Cheat Engine table"
 msgstr "Select Cheat Engine table"

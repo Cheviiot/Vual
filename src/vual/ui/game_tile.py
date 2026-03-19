@@ -90,7 +90,8 @@ class GameTile(Gtk.Overlay):
         self._update_ce_tooltip()
 
         ce_menu = Gio.Menu()
-        ce_menu.append(_("Launch Cheat Engine"), "tile.launch-ce")
+        ce_menu.append(_("Launch CE"), "tile.launch-ce")
+        ce_menu.append(_("Tables folder"), "tile.open-tables-folder")
         ce_menu.append(_("Assign table\u2026"), "tile.assign-table")
         ce_menu.append(_("Remove table"), "tile.remove-table")
 
@@ -112,6 +113,10 @@ class GameTile(Gtk.Overlay):
         self._act_remove.connect("activate", lambda *_: self._on_remove_table())
         self._act_remove.set_enabled(tables.get_table(self._app_id) is not None)
         group.add_action(self._act_remove)
+
+        act_open_folder = Gio.SimpleAction.new("open-tables-folder", None)
+        act_open_folder.connect("activate", lambda *_: self._on_open_tables_folder())
+        group.add_action(act_open_folder)
 
         self.insert_action_group("tile", group)
         row.append(self._btn_ce)
@@ -223,12 +228,16 @@ class GameTile(Gtk.Overlay):
         self._act_remove.set_enabled(False)
         self._update_ce_tooltip()
 
+    def _on_open_tables_folder(self) -> None:
+        tables.TABLES_DIR.mkdir(parents=True, exist_ok=True)
+        Gtk.FileLauncher.new(Gio.File.new_for_path(str(tables.TABLES_DIR))).launch(None, None, None)
+
     def _update_ce_tooltip(self) -> None:
         name = tables.get_table_name(self._app_id)
         if name:
             self._btn_ce.set_tooltip_text(f"CE: {name}")
         else:
-            self._btn_ce.set_tooltip_text(_("Launch Cheat Engine"))
+            self._btn_ce.set_tooltip_text(_("Launch CE"))
 
     def mark_table_bound(self) -> None:
         """Refresh table indicator after binding."""
