@@ -49,7 +49,7 @@ Vual — приложение для запуска [Cheat Engine](https://githu
 ### Stapler
 
 ```
-stplr repo add lumenara https://github.com/Cheviiot/Lumenara.git
+stplr repo add luma https://github.com/Cheviiot/Luma.git
 stplr refresh && stplr install vual
 ```
 
