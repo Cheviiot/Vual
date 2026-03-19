@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vual 0.2.0\n"
+"Project-Id-Version: vual 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-19 00:00+0000\n"
 "PO-Revision-Date: 2026-03-19 00:00+0000\n"
@@ -577,3 +577,18 @@ msgstr "Update"
 
 msgid "Wine not found — install Proton"
 msgstr "Wine not found — install Proton"
+
+msgid "already installed"
+msgstr "already installed"
+
+msgid "Transparent window"
+msgstr "Transparent window"
+
+msgid "Semi-transparent background"
+msgstr "Semi-transparent background"
+
+msgid "English"
+msgstr "English"
+
+msgid "Русский"
+msgstr "Russian"

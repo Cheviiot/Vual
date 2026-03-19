@@ -64,7 +64,22 @@
     <screenshot type="default">
       <caption>Steam game library with covers</caption>
       <caption xml:lang="ru">Библиотека Steam с обложками</caption>
-      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/main.png</image>
+      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/main_page.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Appearance settings</caption>
+      <caption xml:lang="ru">Настройки внешнего вида</caption>
+      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/pref_app.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Steam settings</caption>
+      <caption xml:lang="ru">Настройки Steam</caption>
+      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/pref_steam.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Cheat Engine settings</caption>
+      <caption xml:lang="ru">Настройки Cheat Engine</caption>
+      <image>https://raw.githubusercontent.com/Cheviiot/vual/main/data/screenshots/pref_ce.png</image>
     </screenshot>
   </screenshots>
 
@@ -82,6 +97,12 @@
   </provides>
 
   <releases>
+    <release version="0.3.0" date="2026-03-19">
+      <description>
+        <p>Code split into modules, new icon, screenshots, version check before download, full localization sync.</p>
+        <p xml:lang="ru">Код разбит на модули, новая иконка, скриншоты, проверка версии перед скачиванием, полная синхронизация локализации.</p>
+      </description>
+    </release>
     <release version="0.2.0" date="2026-03-19">
       <description>
         <p>CE table binding, Wine theme manager, built-in guide, window transparency, Adwyra-inspired theme, Russian CE locale installer.</p>
