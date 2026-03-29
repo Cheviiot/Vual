@@ -347,10 +347,10 @@ msgstr "О программе"
 
 # Guide
 msgid "Guide"
-msgstr "Гайд"
+msgstr "Справка"
 
 msgid "Close guide"
-msgstr "Закрыть гайд"
+msgstr "Закрыть Справку"
 
 msgid "Welcome to Vual"
 msgstr "Добро пожаловать в Vual"
